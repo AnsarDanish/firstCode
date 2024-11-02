@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+
+    
+<script>
+    // Javascipt custom object 
+    // we use array normaly to store similar type of data while object is opposte
+    // array can be accessed by index , while object is access by key
+    // array stores only value while object key,value
+
+    var product ={};
+    console.log(product);
+    console.log( typeof product);
+    
+    var product={
+        name:"product 1",
+        price:500,
+        discount:20,
+        brand:"nike"
+    }
+
+    console.log(product.name);
+    console.log(product.price);
+    console.log(product['brand']);
+
+    document.write(`
+     <div class='container'>
+      <div class='row'>
+
+         <h2>${product.name}</h2>
+        
+      </div> 
+    </div>
+    
+     `)
+
+
+     // for of loop
+     productSize=['xl' ,'xxl','L','M','S','10',9,8];
+
+     for(var result of productSize)
+     {
+        document.write(`<li><input type='checkbox' >${result}</li>`);
+     }
+
+
+     for(var i in productSize )
+     {
+        document.write(`<li><input type='checkbox' >${i} ,${productSize[i]}</li>`);  
+     }
+
+     var users={name:"Danish Ansari",age:80,place:"Thane"}
+
+     for(var i in users)
+     {
+        document.write(`<li><input type='checkbox' >${i} : ${users[i]}</li>`);  
+     }
+     
+
+</script>
+    
+</body>
+</html>

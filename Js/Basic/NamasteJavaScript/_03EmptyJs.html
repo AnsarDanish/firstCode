@@ -1,0 +1,30 @@
+<script>
+
+    /*
+  if you have an empty file and when you ran it what does java script engine
+
+  Ans :-  Eventhoug when we have an empty file java script writes some code for us and it gives or create the object
+          at first step it creates global execution context
+          second step it creates object of window in side of it we have lots of function predfine which we can use it
+          for example alert()  propmt() 
+          and third is this varible is created
+
+
+          here we will talk about window global object. 
+          this=== window    it will give true.  beacuse when global context is created along with this varible and window object
+          is created and this refer to window object.this is all done by java script engine.
+
+    */
+
+   var a=10;
+
+   function b()
+   {
+      var x=10;
+   }
+
+   console.log(x);//  x is not define
+   console.log(window.a);  
+   console.log(this.a);
+   console.log(a);
+</script>

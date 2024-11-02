@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6">
+
+                
+                <div class="row">
+                    <div class="col-xl-2   text-center">
+                        Lorem
+
+                <img  src="https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/p/n/9/l-oversizetsrt-101-kajaru-original-imagrk3s9kqpmcqr.jpeg"   onmouseover="myfun(this)"/> <br> </br>
+                <img  src="https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/4/u/p/l-oversizetsrt-101-kajaru-original-imagrk3sjzhmegqj.jpeg"  onmouseover="myfun(this)"/> <br> </br>
+                <img  src="https://rukminim2.flixcart.com/image/128/128/xif0q/t-shirt/d/o/x/l-oversizetsrt-101-kajaru-original-imagrk3sgtf57dpq.jpeg" onmouseover="myfun(this)" /> <br> </br>
+
+                    </div>
+                    <div class="col-xl-10">
+                       
+                        <img  src="" id="mainImg" class="img-fluid" alt=""/>
+                            
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6" >
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum officia repellendus, sequi, odio,
+                ipsam recusandae nostrum velit eum quis aspernatur non veniam distinctio incidunt voluptate nihil
+                enim omnis. Id dignissimos maxime itaque recusandae soluta dolorum ducimus perferendis? Error,
+                consequuntur. Dolor quibusdam recusandae vitae soluta. Ducimus sunt minima assumenda quod
+                voluptatibus totam dolor sapiente iusto voluptas, quos magnam id recusandae vero ad blanditiis
+                temporibus sequi nesciunt earum culpa distinctio dignissimos quam. Doloremque aspernatur dicta
+                consectetur beatae officiis autem, odio nam obcaecati.
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    <script>
+
+        function myfun( record)
+        {
+           
+            
+            var path= record.getAttribute('src');
+           var finalPath= path.replace('128/128','880/1056');
+           console.log(finalPath);
+
+           document.getElementById("mainImg").setAttribute('src',finalPath);
+
+           
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+

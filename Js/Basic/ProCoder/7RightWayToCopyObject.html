@@ -1,0 +1,40 @@
+<script>
+
+/* Object {} */
+    let username1="Danish"
+    let username2=username1 +"Ansari";
+
+    const user1={
+        firstName:"Danish",
+        lastName:"Ansari"
+    }
+
+    const user2={};
+    Object.assign(user2,user1);
+    const user3={...user1}
+
+/* Array [] */
+let arr1=["abc" ,"cde" ,"efg"]
+let arr2=[];
+Object.assign(arr2,arr1);
+arr2.push("updatedinArr2");
+let arr3=[...arr1];
+arr3.push("updatedInArr3");
+console.log("a1" ,arr1);
+console.log("a2" ,arr2);
+console.log("a3" ,arr3);
+
+// using concate for array
+
+let arr4=[].concat(arr1);
+arr4.push("updateInArr4");
+console.log("a4" ,arr4);
+
+// using slice for arry
+let arr5=arr1.slice()
+arr5.push("updateInArr5");
+console.log("a5" ,arr5);
+
+
+
+</script>

@@ -1,0 +1,55 @@
+<script>
+
+   let arr1=[1,5,10,20,40,80]
+   let arr2=[6,7,20,80,100]
+   let arr3=[3,4,15,20,30,70,80,120];
+
+    s1=0;
+    s2=0;
+    s3=0;
+let ans=[]
+    for(let k=0; (s1<=arr1.length-1 && s2<=arr2.length-1 && s3<=arr3.length-1);k++){
+        if(arr1[s1]==arr2[s2] && arr2[s2]==arr3[s3] && arr1[s1]==arr3[s3]){
+          ans.push(arr1[s1])
+          s1=s1+1;
+          s2=s2+1;
+          s3=s3+1;
+          continue;
+        }
+
+        console.log(arr1[s1] ,arr2[s2] ,arr3[s3]);
+        
+
+        if(arr1[s1]==arr2[s2]){
+            s3=s3+1;
+        }else if(arr1[s1]==arr3[s3]){
+            s2=s2+1;
+
+        }else if(arr2[s2]==arr3[s3]){
+            s1=s1+1;
+        }else {
+            if(arr1[s1]>arr2[s2] && arr1[s1]>arr3[s3]){
+       
+          s2=s2+1;
+          s3=s3+1;
+            }else if(arr2[s2]>arr1[s1] && arr2[s2]>arr3[s3]){
+           
+
+                s1=s1+1;
+     
+          s3=s3+1;
+         //   console.log("*");
+            
+            }else if(arr3[s3]>arr1[s1] && arr3[s3]>arr2[s2]){
+          
+
+        s1=s1+1;
+          s2=s2+1;
+       
+            }
+            
+        }
+    }
+    console.log("ans" ,ans);
+    
+</script>

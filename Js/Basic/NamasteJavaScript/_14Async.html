@@ -1,0 +1,97 @@
+<script>
+    /* 
+    async function always return promise object
+    async and await are used to handle the promise object.
+    befor async and await we used to handle the promise chanin like using then and catch method
+
+    using async and await we can make our function to execute asynchronously
+    if dont return promise then js will wrap that value in promise but it will return promise.
+    whenever we write await then js enigne wait to promise get resolved.
+
+
+    if you are writing async befor function . js engine markes it as an asyncronouse function . 
+    if you used as awit then your code inside the function will be executed synchronously . but outside
+    it perform Asynchronously.
+
+
+    */
+   const p= new Promise((resolve,reject)=>{resolve("Danish Ansari")})
+   const p1= new Promise((resolve,reject)=>{setTimeout(()=>resolve("Hazim Ansari"),10000)})
+
+
+   async function myFun2(){
+    console.log("fun2 pp-1");
+      
+     // let res =await p;
+        var res="dhdfh cggj"
+      console.log("res" ,res);
+      
+   }
+
+   myFun2()
+   async function myFun3(){
+    console.log("fun3 pp-3");
+    
+      let res =await p1;
+   // var res="dhdfh"
+      console.log("res of fun 3" ,res);
+      
+   }
+
+   myFun3();
+   console.log("after fun3 ");
+   
+
+   /* problem with an old fashion handling promise */
+  async  function myFun4(){
+        // js engine will not wait . it will register the promise and when the promise will get resolved
+        // then then() will get exexuted. and befor it it continues it executuion.
+      p1.then(res=>console.log("fun4 res",res)
+      ) 
+      console.log("fun4 pp1");
+
+     let res2= await p;
+     console.log("res2" ,res2);
+     console.log("fun4 pp2");
+        
+   }
+
+   myFun4()
+
+    async function myfunc(params) {
+        console.log("1. first line");
+        await new Promise(function(res ,reject){
+           setTimeout(()=>{
+            console.log("2nd line");
+            res()
+            
+           },2000);
+        });
+
+        console.log("3rd line");
+             
+    }
+    myfunc();
+
+
+    /* how fetch workos */
+
+  async function handlePromise(){
+try {
+   let data= await fetch("abc"); // fetch returns response . response is a stream body, we use json method to get our data
+
+let jsonvalue= await data.json() //   json method also return promise object. 
+} catch (error) {
+   console.log("error" ,error);
+   
+}
+
+  fetch("abc").then((data)=> data.json).then((jsonVal)=>console.log("jsonValue")
+  ).catch((err)=>console.log(err)
+  )
+
+
+  }
+handlePromise();
+
+</script>

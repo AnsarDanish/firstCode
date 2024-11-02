@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // varible in javascript
+        no1=100;
+        no2=90.89;
+        console.log(no1+no2);
+        console.log(no1*no2);
+        console.log(no1/no2);
+        console.log(no1-no2);
+
+        // exponential operator
+        no3=6;
+        console.log(no3*no3*no3);
+        console.log(no3**3);
+
+        // relational operator
+        console.log(3==30);
+
+        // data type
+        console.log(typeof 3); //Number
+        console.log(typeof 3.5);//Number
+        console.log(typeof '3'); //String
+
+        // comparator operator == vs ===
+        console.log(3=='3');// true 
+        console.log(3==='3'); // false      === it compare value as well as data type
+
+        // ! not operator
+
+        console.log(90 !='90'); //false
+        console.log(30 !==30); //false
+        console.log(30 !=='30');// true
+
+        //Math
+        console.log(typeof Math); // it is an object which has collection of function and constant value
+        console.log(Math);
+        console.log(Math.pow(6,3));
+        console.log(Math.sqrt(64));
+        console.log(Math.random());// number gives between 0 to 1
+
+        // types of varible
+
+        var x=10;
+        console.log(x);  // undefined
+        var x=50; // redecleration is allowed for var not let and const
+        x=60;
+        console.log(x);
+        let y=40; //javascript allocates varible y in script scope, so there is rule inside script scope
+                  // we cant declare two varible with same name
+        console.log(y); // op   undefied 
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container" >
+        <input type="text" id="x1" class="form-control" placeholder="Enter The Amount"><br>
+        <input type="number" id="x2" class="form-control" placeholder="Enter The interest"><br>
+        <select class="form-control" id="x3">
+            <option>15</option>
+            <option>20</option>
+            <option>25</option>
+
+        </select>
+
+        <button class="btn btn-info"  onclick="myfun()">Enter</button>
+ </div>
+ <hr />
+
+ <table class="table">
+    <thead>
+        <th>Year</th>
+        <th>Opening Balance</th>
+        <th>Amount</th>
+        <th>Interest Amount</th>
+        <th>Closing Balanace</th>
+    </thead>
+    <tbody id="data">
+
+    </tbody>
+ </table>
+
+    <script>
+
+        function myfun()
+        {
+            var amount= +document.querySelector("#x1").value;
+            console.log(amount , typeof  amount );
+
+            var roi= +document.querySelector("#x2").value;
+            console.log(roi , typeof  roi );
+
+            var year=+ document.querySelector("#x3").value;
+            console.log(year , typeof  year );
+
+            var closingBalance=0;
+            var interestAmount=0;
+            var OpeningBalance=0;
+            var tableRecord=``;
+
+            for( let i=1; i<=year;i++ )
+            {
+                OpeningBalance=closingBalance;
+                interestAmount=((closingBalance+amount)*roi/100);
+                closingBalance= closingBalance+ interestAmount+amount;
+                console.log(i+" "+OpeningBalance+" "+amount+" "+ interestAmount+ " "+ closingBalance);
+                   
+                tableRecord=tableRecord+`
+                 <tr>
+                    <td>${i}</td>
+                    <td>${OpeningBalance}</td>
+                    <td>${amount}</td>
+                    <td>${interestAmount}</td>
+                    <td>${closingBalance}</td>
+                 </tr>
+                
+                `;
+            } 
+
+
+            document.getElementById('data').innerHTML=tableRecord;
+
+
+        }
+        
+    
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,88 @@
+<script>
+    /* 
+      property :-   length
+      function without argument :-
+      toUpperCase()
+      toLowerCase()
+      trim()
+      trimStart()
+      trimEnd()
+
+      function with argument:-
+      includes()
+      indexOf()
+      replace()
+      replaceAll()
+      padStart()
+      padEnd()
+      charAt()
+      codeCharAt()
+      split()
+    */
+   /* includes() */
+
+   let includes="Danish Ansari"
+   let includes2=includes.toLowerCase();
+   let inRes=includes.includes("Ansari");
+   let inRes2=includes.includes("ansari");
+   let inRes3=includes.includes("i");
+   console.log("inRes" ,inRes);
+   console.log("inRes2" ,inRes2);
+   console.log("inRes3" ,inRes3);
+
+   /* indexOf() */
+   let ind=includes.indexOf("A");
+   console.log("indexOf" ,ind);
+   let ind2=includes.indexOf("a");
+   console.log("indexOf2" ,ind2);
+   let ind3=includes.indexOf("ar");
+   console.log("indexOf3" ,ind3); //10
+   let ind4=includes.indexOf("at");
+   console.log("indexOf4" ,ind4); // -1
+
+   /* replace() */
+   let rep="I am Hazim"
+   console.log("rp1" , rep.replace("am" ,"are"));
+   console.log("rp2" , rep.replace("amr" ,"are"));
+   console.log("rp3" , rep.replace("" ,"TT"));
+   console.log("rp2" , rep.replace(" " ,"S"));
+   /* replaceAll() */
+  
+   console.log("rp5" , rep.replaceAll("am" ,"are"));
+   console.log("rp6" , rep.replaceAll("amr" ,"are"));
+   console.log("rp7" , rep.replaceAll("" ,"TT"));
+   console.log("rp8" , rep.replaceAll(" " ,"S"));
+   
+   /* concat() */
+   let con="hellow"
+  console.log("co1" , con.concat(" "," world"));
+
+  /* padStart() */
+  let fourDigit="7856"
+  console.log("pad1" , fourDigit.padStart(16,"*")); //16 means total length of string
+  console.log("pad2" , fourDigit.padEnd(16,"9")); //16 means total length of string
+
+  /* charAt() */
+  // st[3] === charAt()
+  let tt="my name is Danish Ansari"
+  console.log("at1" , tt.charAt(3));
+  console.log("at2" , tt[3]);
+
+  /* charCodeAt() */
+  console.log("charCodeAt" ,tt.charCodeAt(4));
+
+  /* split() */
+  let splitted=tt.split(" ")
+  console.log("splitted ",splitted);
+  console.log("splitted2 ",tt.split(""));
+  console.log("splitted3 ",tt.split("a"));
+  
+  let temStr=` my name is danish . last four digit is ${fourDigit}`;
+
+  console.log("temp1" ,temStr);
+  
+  
+  
+  
+   
+</script>

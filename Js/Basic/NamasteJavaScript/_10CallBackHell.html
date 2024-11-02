@@ -1,0 +1,25 @@
+<script>
+    const cart=["shoes" ,"pants" ,"kurta"];
+    
+    /* 
+        createOrder 
+        proceedToPayment
+        orderSummary
+        updateWallet
+    */
+    api.createOrder(function (){
+
+        api.proceedToPayment( function(){
+        api.showOrderSummary()
+    })
+    } ,cart);
+
+
+    /* problem:-1. the problem is above call back hell . our code grow horizontally
+     2. Inversion of controll is going to another function */
+
+    
+
+
+    
+</script>

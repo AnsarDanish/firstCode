@@ -1,0 +1,87 @@
+<script>
+    const fruits=["one" ,"two" ,"three" ,"four"]
+
+    const dataTypePrimitive=["danish" ,null ,undefined,10,false ,{}];
+    dataTypePrimitive.firstName="Danish"; // storing an key and pair value in array beacz array is behind the scene is object
+
+
+
+    console.log(dataTypePrimitive);
+    /* 
+    basic method of arrays
+    pop()
+    push()
+    shift()  * pop()
+    unshift() *push ()
+    concat()
+    indexOf()
+    includes()
+    reverse()
+    sort()
+    slice()
+    splice()
+    */
+
+    fruits.shift(); // deleting element from initial index
+    console.log("2" ,fruits);
+    fruits.unshift("ten");
+    console.log("3" ,fruits);
+
+    // concat()  in string it concat()
+    let stringConcat="Danish".concat(" Ansari");
+    console.log("stringConcat" ,stringConcat);
+
+    let newArr=fruits.concat([1,2,3,4]);
+    console.log("newArr" ,newArr);
+
+    /* indexOf()  string indexOf() gievs character index  , returns first matching index*/
+    let indexOff=fruits.indexOf("abc");
+    console.log("indexOff" ,indexOff);
+
+    /* includes()  same as string , finds searching element is there or not , returns true and false */
+    let incluRes=newArr.includes(2);
+
+    console.log("incluRes" ,incluRes);
+
+    /* reverse()  same work in string */
+    console.log("befr Rev" , newArr);
+    console.log("after Rev" ,newArr.reverse());
+
+    /* sort()   */
+/* it does sorting on based on ascii code  not based on alphabatical order */
+    newArr.push(12,14,"888",999)
+    console.log("srting" , newArr.sort());
+
+    /* slice(startValue ,endValue)  , it returns new Array*/
+
+    console.log("bfrSli" , newArr);
+    
+   let aftrSlice= newArr.slice(2,6);
+
+   console.log("afterSlice" ,aftrSlice);
+
+   /* splice()  it does changes in original array  and returns new array, delete the element from original array*/
+   console.log("bfrSplice" , newArr);
+
+   /* splice(startIndex , howManayNUmberElementToBeDelete ,addingElement1 ,addingElement2 .....) */
+   console.log("afterSplice" , newArr.splice(3,2,"danish","ansari","hazim"));
+
+   console.log("changed in og arr" , newArr);
+   
+   
+    
+    
+    
+    
+
+
+    
+    
+    
+
+    
+    
+    
+  
+
+</script>

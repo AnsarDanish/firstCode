@@ -1,0 +1,164 @@
+<script>
+    let word = "I Love coding  ffhjfhhjfgjhfgjhfg   sdgsdg fhf fh in JavaScript";
+    let wordArr = word.split(" ");
+    console.log("wordArr", wordArr);
+    let longestLen = -1;
+    let longestEleIndex = -1;
+    for (let i = 0; i < wordArr.length; i++) {
+        if (longestLen < wordArr[i].length) {
+            longestLen = wordArr[i].length;
+            longestEleIndex = i;
+        }
+    }
+
+    console.log("longest Word", wordArr[longestEleIndex]);
+
+    /* palindrome */
+    let st = "racecaroo";
+    let last = st.length - 1;
+    let br = false;
+    for (let k = 0; k < st.length / 2; k++) {
+
+        if (st[k] != st[last]) {
+            br = true;
+            break;
+        }
+        last = last - 1;
+    }
+    if (br)
+        console.log("not palindrome");
+    else
+        console.log("it is");
+
+    /* palidrome using inbuilt fn */
+    let rvSt = st.split("").reverse().join("");
+
+    /* remove duplicate element */
+    let arr = [1, 2, 3, 4, 4, 5, 6, 6]
+    let uniqueElement = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (uniqueElement.indexOf(arr[i]) === -1) {
+            uniqueElement.push(arr[i])
+        }
+    }
+    console.log("unq1", uniqueElement);
+
+    /* method 2 */
+    let obj = {}
+    for (let k = 0; k < arr.length; k++) {
+        obj[arr[k]] = ""
+    }
+    let unq2 = Object.keys(obj).map(e => Number(e))
+    console.log("unq2", unq2);
+
+    /* method 3 using set */
+    let set1 = new Set(arr)
+    console.log("unq3", [...set1]);
+
+    /* waf two string are anagrams or not */
+    let ana1 = "ffftttyy";
+    let ana2 = "tttyyfff";
+    let amp1 = {}
+    let amp2 = {}
+    if (ana1.length !== ana2.length) {
+        console.log("not ana");
+
+    } else {
+        for (let k = 0; k < ana1.length; k++) {
+            if (ana1[k] in amp1) {
+                amp1[ana1[k]] = amp1[ana1[k]] + 1;
+            } else
+                amp1[ana1[k]] = 1;
+        }
+        for (let k = 0; k < ana2.length; k++) {
+            if (ana2[k] in amp2) {
+                amp2[ana2[k]] = amp2[ana2[k]] + 1;
+            } else
+                amp2[ana2[k]] = 1;
+        }
+        console.log("amp1", amp1);
+        console.log("amp2", amp2);
+
+        let kys = Object.keys(amp1);
+        let kys2 = Object.keys(amp2);
+        if (kys.length != kys2.length)
+            console.log("not ana");
+        else {
+            let flag = true
+            for (let k = 0; k < kys.length; k++) {
+                if (amp1[kys[k]] != amp2[kys[k]]) {
+                    flag = false;
+                    break;
+                } else if (kys2.indexOf(kys[k]) === -1) {
+                    console.log("breaking");
+
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+                console.log("ana");
+            else
+                console.log("not ana");
+
+        }
+    }
+
+    /* anagrams using inbuilt function */
+
+    let mdAna1 = ana1.split("").sort().join("")
+    let mdAna2 = ana2.split("").sort().join("")
+    console.log("mdAna1", mdAna1);
+    console.log("mdAna2", mdAna2);
+
+    if (mdAna1 === mdAna2)
+        console.log("2", "ana");
+    else
+        console.log("not ana");
+    /* waf that returns number of vowel in string */
+
+    let vo = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    let voSt = "DanishAnsari";
+    let ct = 0;
+    for (let k = 0; k < voSt.length; k++) {
+        if (vo.indexOf(voSt[k]) !== -1) {
+            ct++;
+        }
+    }
+    console.log("vowel count ", ct);
+
+    /* largest number in an array */
+    let lerg = [10, 40, 50, 99, 63, 15, 99]
+
+    let mx = lerg.reduce((prev, cur, ind, arr) => {
+        if (prev > cur) {
+            return prev
+        } else
+            return cur;
+    });
+    console.log("max", mx);
+
+    /* number is prime or not */
+    let pr = 17 ;
+    if (pr === 2)
+        console.log("it is prime");
+    else {
+       let prFlag=false;
+        for (let j = 2; j <= pr / 2; j++) {
+            if (pr % j === 0) {
+                console.log("yes it is not prime");
+                prFlag=true
+                break;
+            }
+
+        }
+        if(!prFlag)
+        console.log("it is prime");
+        
+    }
+
+
+
+
+
+</script>

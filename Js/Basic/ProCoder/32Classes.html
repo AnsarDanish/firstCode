@@ -1,0 +1,56 @@
+<script>
+       // we are setting every function CreateUser2.prototype.getAgeYear4 . so our code becomes big
+   // so this problem is solved by classes , classes are synthetical suger of constrictor function
+   // behind the the scene it works same as it constructor function like it creates object
+   // and put all methods in __proto__ property.
+
+   // typeof CreateUser --> it shows function mean class is behinde function
+   class CreateUser {
+
+    #age  // private field
+    hi="hello world" // public field
+    constructor(firstName,lastName,age) {
+        this.firstName=firstName;
+         this.lastName=lastName;
+         this.#age=age;
+        
+    }
+    getBirthYear(){
+        this.#privateMethod();
+        return new Date().getFullYear() - this.#age;
+    }
+
+    #privateMethod(){
+        console.log("priavte method");
+        
+    }
+   }
+   // in this way also you can do , we do with Array , Function
+   CreateUser.prototype.getAgeYear4=function getAgeYear() {
+        return new Date().getFullYear() - this.age;
+    }
+
+   console.dir(CreateUser)
+   //    CreateUser()  type error class contructor can not be invoked without new
+   const user5=new CreateUser("Hazim" ,"Ansari" ,25);
+console.log(user5)
+console.log(user5.getBirthYear());
+
+
+//  private key with normal object
+
+const a={
+    name:'anurag',
+    '#age':25
+}
+console.log(a.name,"   ");
+//  console.log(a.age,"   ");  error  but not truly private member
+console.log(a);
+
+
+console.log(a['#age']); //  can be accessible
+
+
+
+
+</script>

@@ -1,0 +1,55 @@
+<script>
+    const person1 = {
+        name: "Danish",
+
+    }
+    const person2 = {
+        name: "Hazim",
+    }
+
+    function print(ft) {
+        console.log(
+            `name is ${this.name} and ft is ${ft}`
+        );
+
+    }
+
+    print.call(person2, "ft1");
+
+    Function.prototype.myCall = function (obj, ...args) {
+        console.log(this);
+        obj.fun = this;
+        //  this.call( obj,...args)
+        obj.fun(...args)
+    }
+    print.myCall(person2, "ft1");
+    // console.log(person2);
+
+    Function.prototype.myApply = function (obj, arr) {
+
+        obj.fn = this;
+        obj.fn(...arrr);
+    }
+
+   let ftt= print.bind(person1);
+  // ftt("salary");
+
+   Function.prototype.myBind=function(obj,...arr){
+     
+    if(typeof this !=="function")
+     throw new Error("can not be call able");
+      
+     obj.fn=this;
+     return function (...arr2){
+        obj.fn(...arr,...arr2)
+     }
+   }
+
+   let ftt2= print.myBind(person1,"ccc ");
+   ftt2("salary");
+
+
+
+
+
+</script>

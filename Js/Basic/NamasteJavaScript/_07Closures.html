@@ -1,0 +1,41 @@
+<script>
+//  Closures: it is like function along with its scope  if we have fuction inside it we have another function
+//   and we are returning it so just does not return only function and return also its lexical scope
+
+//so assume that there is a function which name is outer and inside the outer function 
+// there is a another function which name is inner function . when we return inner function
+// from outer function it not only return function but also it return lexical scopes , means it parents function scope.
+
+
+
+/*
+Uses of Closures
+Module design pa
+*/
+function x()
+{
+     var a=15;
+    function y()
+    {
+        console.log(a);
+    }
+
+    return y;
+}
+
+var c= x();
+c();  
+
+function outer()
+{
+    let a=10;
+    function inner()
+    {
+          console.log(a);
+    }
+
+    return inner;
+}
+
+  
+</script>

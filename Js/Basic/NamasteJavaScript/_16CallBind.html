@@ -1,0 +1,71 @@
+<script>
+    let std1={
+        fn:"abc",
+        ln:"cfgd",
+        justPrint(){
+            console.log(this.fn , this.ln) ;
+            
+        }
+    }
+
+    let std2={
+        fn:"cde",
+        ln:"dhg"
+    }
+
+    std1.justPrint();
+    std1.justPrint.call(std2)
+    function myFun2(third,four){
+        console.log(this.fn , this.ln ,third,four) ;
+        
+     }
+
+    myFun2.call(std1)
+    myFun2.call(std2,"third","4");
+    // only the difference between call and apply method the way we call it
+    myFun2.apply(std2,["3" ,"4"]);
+    // the bind method looks exactly same as call method but the only difference when we call bind method and we pass object
+    // it makes copy of function and it bind with the object and return the same method
+    let printSomething=  myFun2.bind(std2,"some","thing");
+    printSomething();
+
+
+
+
+    /* polyFill for bind */
+
+    let name={
+        fn:"Danish",
+        ln:"Ansari"
+    }
+    let printName=function (ft ,sc){
+        console.log(this.fn+" "+this.ln ,ft ,sc);     
+    }
+    let printMyName=printName.bind(name);
+    printMyName();
+
+    printName.myBind=function(ths , ...anotherArg){
+// this ---> printName
+        ths.printName=printName;
+      //  return ths.printName
+
+      return function(){
+        ths.printName(...anotherArg)
+      }
+
+    }
+
+    let rt=printName.myBind(name,"g1","g2");
+    rt()
+
+
+    /* every function has access of bind method .so I also want than I will write myBind in Function.prototype */
+
+    Function.prototype.myBind=function(...args){
+      let obj=this
+        return function(){
+        obj.call(args[0])
+        }
+    }
+     
+</script>

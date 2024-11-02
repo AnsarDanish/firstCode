@@ -1,0 +1,23 @@
+<script>
+     const num=[14,16,13,12,10,8,89,40112];
+     let max= Math.max(...num);
+     let min=Math.min(...num);
+     console.log("max" ,max);
+     console.log("min" ,min);
+     
+     let srting=num.sort();
+     console.log("sorting" , srting);
+
+    let mx= num.reduce((prev ,cur,ind,num)=>{
+       if(prev<cur){
+         return cur;
+       }else{
+         return prev;
+       }
+     });
+
+     console.log("red" ,mx);
+     
+     
+     
+</script>

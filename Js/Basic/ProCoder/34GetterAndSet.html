@@ -1,0 +1,65 @@
+<script>
+    //Getter and setter
+
+    const user={
+        firstName:"Danish",
+        lastName:"Ansari",
+        get fullName(){
+            return `${this.firstName} ${this.lastName}`;
+        },
+        set fullName(val){
+            console.log("val" ,val);
+            
+        }
+
+    }
+
+    console.log(user.fullName);
+    user.fullName="Hazim Ansari"
+    console.log(user);
+
+
+class CreateUser {
+
+#age  // private field
+static hi="hello world" // static field
+
+static{
+    console.log(" it will exexuted when the class is loaded first time");
+    this.staticPropByDefault=0;
+    
+}
+constructor(firstName,lastName,age) {
+    this.firstName=firstName;
+     this.lastName=lastName;
+     this.#age=age;
+    
+}
+getBirthYear(){
+    this.#privateMethod();
+    return new Date().getFullYear() - this.#age;
+}
+
+#privateMethod(){
+    console.log("priavte method");
+    
+}
+
+static staticMethod(){
+    console.log("static method");
+    
+}
+get age(){
+    return this.#age
+}
+set age(val){
+    this.#age=val
+}
+}
+
+const user5=new CreateUser("Hazim" ,"Ansari" ,25);
+console.log(user5);
+
+    
+    
+</script>

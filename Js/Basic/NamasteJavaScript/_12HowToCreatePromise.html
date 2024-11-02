@@ -1,0 +1,106 @@
+<script>
+    const cart=["shoes","pants" ,"kurta"];
+  //const cart=[]
+
+  // whatever we have to pass in next chain , we have to return from previouse chanin
+  // if any of the promise is rejected so in next chain then will be not executed directly catch will be executed
+  //
+
+  //*******  consuming promise with promise chain
+  const promise =  createOrder(cart);
+  console.log(promise);
+  promise
+  .then(function(orderId){
+     console.log("after resolved");
+     console.log(promise);
+     return orderId;
+  }).catch(function(){
+     // catch will reposible of all above then
+  })
+   .then(function(orderId){
+    console.log("2" ,orderId);
+    let pp=ProceedToPayment(orderId);
+    console.log("pp" ,pp);
+     return pp
+  }) 
+  .then(function(data){
+    console.log("3" ,data);
+      let log= updateWallet(data);
+      console.log(log);
+      return log;
+  })   
+  .catch(function(err){
+    console.log("rejected");
+    console.log(err);
+  })
+  .then((data)=>{
+    console.log("no matter whatever happen this then will defenitly will be executed beacuse ");
+    console.log(data);
+  })
+
+
+// creating our own function that will return promise
+// resolve and rejecte are function which is given by js to build promise
+// producing promise
+function vaildateCart(cart=[]){
+   if( cart.length >0){
+     return true;
+   }
+  return false;
+}
+
+function ProceedToPayment(date){
+    const prev= new Promise(function(resolve ,reject){
+
+        resolve("3456")
+    })
+    return prev
+
+}
+function updateWallet(date){
+    const prev= new Promise(function(resolve ,reject){
+
+        // resolve("789")
+        // resolve("asfaf")
+        reject("not updated wallet")
+    })
+    return prev;
+
+}
+function createOrder(cart){
+    const pr= new Promise(function(resolve ,reject){
+
+        if(!vaildateCart(cart)){
+       
+            const err = new Error("Cart is not valid");
+            reject(err)
+        }
+        const  orderId="1234";
+        const ty={orderId:orderId}
+        if(orderId){
+           setTimeout(function (){
+            resolve(ty)
+           },5000)
+        }
+    });
+
+    return pr;
+}
+
+console.log(window);
+
+
+// const createOrder=function(){
+   
+//   let pr=new promise(function (resolve,reject){
+//     if(5>10){
+//       const err=new Error("kal nahi aa ra");
+//        reject(err)
+//     }else{
+//       resolve()
+//     }
+//   });
+
+//   return pr;
+// }
+</script>

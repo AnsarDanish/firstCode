@@ -1,0 +1,17 @@
+<script>
+    /* Executuion context consist 2 phase . 1st phase is called memory creation phase and 2nd phase is called code executuion phase
+    in 1st phase all the varible and function are allocated with memory. andvarible value is initialized with undefined and i case of function
+    whole code is stored .
+    
+    In 2nd phase code is executed line by line . and varible which got memory is initilized with actual varible. if there is any 
+    function call , js enigne creates another excutuion context that is called local/function execution contetx*/
+    debugger
+    var userName="Danish";
+
+    function sayHi(userName){
+        console.log("welcomwe" +userName);
+        
+    }
+    console.log("kashif");
+    
+</script>

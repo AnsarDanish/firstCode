@@ -1,0 +1,77 @@
+<script>
+    /* this in global space */
+// this refere in global space to globalObject . it could be diffeerent for node js, browser (window object)
+'use'
+console.log(this);
+
+
+    /* this in function */
+function x(){
+    console.log(this);
+    // in strict mode it is undefine
+    // in non-strict mode it is window
+    
+}
+x()
+
+
+    /* this in strict mode   (this substitution) */
+    // if the value of this keyword is undefine or null 
+    // this keyword will be replaced with globalObject only in non-strict mode . it happens only by concept of
+    // this substituion
+
+    /* this values (this keyword value) depends on how function is called (window) */
+
+    // if the function is called with object.method() then this will be refereed to that object
+    // x() --> in Strict mode (un define)
+    // window.x()   ----> in Strict mode this===window
+    // in non strict mode it works as this substituion
+
+
+    /* this inside a Object's method */
+
+    const studnt={
+        ag:10,
+        age(){
+            console.log("age" ,this.ag);
+            console.log(this); // obj    if the function is called with object.method() then this will be refereed to that object 
+            
+            
+        }
+    }
+    studnt.age();
+
+
+
+
+
+    /* call apply and bind method */
+    const studnt2={// i want to reuse method of age in student
+        ag:20,
+
+    }
+    studnt.age.call(studnt2)// value of this overridden
+
+
+    /* this keyword inside arrow function */
+    // arrow function do not have their own this , they take this keyword value from its enclosing lexical context
+
+    const student3={
+        a:10,
+        x:function(){
+            console.log("t2",this);
+            
+        },
+        y:()=>{
+            console.log("t1",this); // this== window
+            
+        }
+    }
+
+    student3.x()
+    student3.y()
+
+
+
+
+</script>

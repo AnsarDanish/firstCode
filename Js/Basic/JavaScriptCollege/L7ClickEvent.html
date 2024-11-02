@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Example</h1>
+
+        <p>
+            <button class="btn btn-info"  onclick="alert()">
+                Enter
+           </button>
+        </p>
+        <p>
+            <button class="btn btn-info"  onclick="abc()">
+                Enter
+           </button>
+        </p>
+
+        <p>
+            <button class="btn btn-info"  onmouseover="abc()">
+                Enter
+           </button>
+        </p>
+        <p >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis iste neque obcaecati nihil sit dolore quia quidem soluta eveniet, similique quos tempore alias rerum illum odit. Aut vel quas eos?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor reiciendis accusantium qui officiis fugit incidunt ea amet quidem ad iure voluptates possimus sapiente doloremque iste aliquam optio excepturi, ipsum mollitia placeat explicabo natus! Itaque earum quaerat, sit exercitationem beatae laborum?
+        </p>
+
+    </div>
+
+    <script>
+
+        /* 
+             document , console, fetch , setTimeOut these are the browser api . these can be access only by
+             windows object thatjava script gives us this object when we execute javascript code.
+
+             document itself a object it return html element. it has different method 
+             getElementById   getElementsByClass  getElementByName
+             querySelector   querySelectorAll
+
+             getElementById('idname')--------select element which is having an ID (i.e only first in occurance)
+             getElementsByClass('className')------ multiple elements
+             getElementByName('tagName')------multiple elements
+             querySelector(id or class or tag)-------(select only first element which is first occurance)
+             querySelectorAll(id or class or tag)----------(select multiple elements )
+        
+        */
+        function abc()
+        {
+            console.log("Clicked ");
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button id="click" onclick="click">Click me</button>
+<body>
+
+    <script>
+
+
+
+      function addEventListenerattached()
+      {
+         let count=0;
+       document.getElementById("click").addEventListener("click" , function(){
+
+           console.log("COunting button hit" ,++count);
+       })
+      }
+       
+      addEventListenerattached();
+
+    </script>
+    
+</body>
+</html>

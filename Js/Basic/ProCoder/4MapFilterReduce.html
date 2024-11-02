@@ -1,0 +1,51 @@
+<script>
+   const fruits=['apple' ,'banana','pine apple' ,'mango']
+
+   // it gives another array
+   // 
+const mapArry =  fruits.map((frt , index , arr)=>{
+     console.log(frt , index ,arr);
+     return frt.toUpperCase()
+
+   })
+   console.log('maped arr' ,mapArry);
+
+
+  const filtArr= fruits.filter((frt ,index , arr)=>{
+   // when condition will get true , it will push the frt in arr and
+   // it returns array
+      return frt.length ===5
+
+   //   if(frt.length ===5){
+   //      return frt;
+   //   }
+   })
+   console.log('filte arr1' ,filtArr);
+
+   const filtArr2= fruits.filter((frt ,index , arr)=>{
+
+      return frt.toLowerCase().includes('n')
+
+   })
+   console.log('filte arr2' ,filtArr2);
+   const filtArr3= fruits.filter((frt ,index , arr)=>{
+
+      return index>2
+
+   })
+   console.log('filtArr3' ,filtArr3);
+
+   // Reduce
+   const nums=[1,2,3,4,5,6,7,8,9,10];
+
+   nums.reduce((acc , cur ,index , array)=>{
+       
+      //console.log(cur);// it prints from 2 to 10
+      console.log(index,acc ,cur);
+
+   },0)
+
+
+
+
+</script>

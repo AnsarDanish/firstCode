@@ -1,0 +1,23 @@
+<script>
+/*
+trying to access varible and function befor its initialization and decleration is called hoieting
+why we can access hoiest varible with var keyword and can not access when the same varible is defined with let , const keyword
+
+so actually this happens because js engines define both type of varible in a different memory space. hoiested member can be only 
+accessible when those is allocated in global object memory space.
+
+*/
+
+function abc(){
+  var g=15;
+
+}
+  var b=100;
+  var b=1000;
+  console.log(b);
+if(true){
+  var d=80;
+}
+  console.log(d); // 
+
+</script>

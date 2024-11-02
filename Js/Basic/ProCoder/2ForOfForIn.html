@@ -1,0 +1,41 @@
+<script>
+   'use strict'// it gives the error when we declare varible without let,const and var
+   const fruits=['apple' ,'banana','pine apple' ,'mango']
+
+    for(const fruit of fruits){
+        // this for loop every time creats fruit variable
+        // for of loop can be used itrable personect
+        //like  array ,string , Map
+        // for of loop can not be used in personect
+     
+        console.log(fruit);
+    }
+
+    console.log("****************************                 1");
+    for (let ind in fruits){
+        console.log(fruits[ind]);
+    }
+
+    let person={
+        name:'Danish Ansari',
+        age:15
+    }
+
+    console.log("g1",person.name);
+ 
+    console.log("*********************************          2");
+    for(let key in person){
+        //this for in does not give better performance 
+        console.log(person[key]); // bracket notation
+      
+    }
+    // if u have to get personect all value u should iterate like this
+    console.log("**************************     3");
+    const keys=Object.keys(person)
+    const personValues=Object.values(person)
+    console.log(personValues);
+    for(let key of keys){
+        console.log(person[key]);
+    }
+
+</script>

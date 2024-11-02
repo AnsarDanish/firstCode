@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" >
+    <h2>
+       count <span>0</span>
+    </h2>
+    <script>
+        
+        const inputElement=document.querySelector('input')
+        const span=document.querySelector('h2 span')
+        const callApi=function (val){
+            console.log("calling api" , val);
+        }
+
+const updateNumber =throttle(()=>{
+    span.innerText=++span.innerText
+} ,1000)
+    function throttle(func ,dealy=1000) {
+      let timerId=null;
+      let argsss=[];
+      let firstTime=true;
+      if(firstTime){
+        dealy=0;
+        firstTime=false;
+      }
+        return (...args)=>{
+        argsss=args
+           if(timerId)
+            return;
+            timerId=  setTimeout(()=>{
+                    func(...argsss);
+                    timerId=null;
+                    dealy=1000; 
+                },dealy)
+            }
+        }
+    const callingApi=throttle(callApi,1000 )
+
+        inputElement.addEventListener('input' , (e)=>callingApi(e.target.value))
+        document.addEventListener('mousemove' ,()=>{
+            updateNumber()
+        })
+    </script>
+</body>
+</html>

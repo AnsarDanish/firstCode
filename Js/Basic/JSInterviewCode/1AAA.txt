@@ -1,0 +1,7 @@
+1 . Duplicate element in array
+2. max and min in given arr
+3. == vs ===  (checks value vs check values and datatype)
+4. How to find second largest value is array
+5. Difference between Filter and Find
+6. the reverse of string
+7. waf that return longest word in sen

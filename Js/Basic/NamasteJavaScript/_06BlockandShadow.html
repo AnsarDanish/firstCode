@@ -1,0 +1,44 @@
+<script>
+
+    /*
+   block:-  comibination of some statement
+
+   block scope:- the type of varible which can be access inside the particular block is called block scope
+
+   let and const is allocated in seprate memory allocation. while var is allocated inside global object
+   that is basically window object. 
+
+    */
+
+/*    var a=100;
+   {
+      var a=10;
+      let b=20;
+      const c=30;
+   }
+
+   console.log(a); //  there will not memory allocated for a varible twice. here a varible value get change
+   console.log(b); // refrence b is not define
+   console.log(c); */
+
+   var a=100; // global scope
+   let b=50;
+   {
+      var a=10;// global scope
+      let b=20;// block scope
+      const c=30;
+   }
+
+   //  b is shadowing
+   console.log(a); // 10  there will not memory allocated for a varible twice. here a varible value get change
+   console.log(b); //50  //script scope
+  
+   /* IQ :- What is shadowaing
+    Shadowaing basically when we define varible with same name ,EX:- there is a varible 
+    outside the block and same name a varible inside the block , if we access a it shows later one value
+    this concept is known as shadowing
+   
+   */
+
+
+</script>

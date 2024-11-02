@@ -1,0 +1,114 @@
+<script>
+    const cart = ["shirt", "shoes", "pants", "kurta"];
+    /* 
+    
+        assume there is two api 
+        createOrder(cart)  it return orderId
+        and second is 
+        ProceedToPayment(cart);
+        both are asynchronouse and both are independent each other
+
+    */
+    createOrder1(cart, function(orderId){
+        ProceedToPayment1(orderId);
+       })
+    /*
+    method 1:
+       
+     so over here createOrder responsiblity will be that it createsOrder and generate orderid and call ProceedToPayment
+    but problem is over here that we have dependent to createOrder api that after some time of interval it will call ProceedToPayment
+     that problem is known as Inversion of control. and there is also an issue with callback that is callback hell
+     but this both can be handle through the promises
+    */
+    const promise10 =  createOrder(cart)
+    
+    promise.then(function(orderId){
+       ProceedToPayment(orderId);
+      })
+   
+    /*
+    
+    method 2:
+     so createOrder we design in such a way that it will not take callBack function rather it will return promise object
+  
+    
+    in second method we are not passing a callback function rather we are attching here with then method of promise object
+    in second method we have control to calling ProceedToPayment.
+    as soon as promise object data will be filled callBack (ProceedToPayment) will be automatically get called
+    
+    Interview ans what is Promsise
+    Promise is an Object . that works as a container for future value. it is an imutable object
+
+    promise object has 3 property pending , fullfilled , and rejected
+    at initial time promise obejct will be in pending state.
+    when state becomes fullfilled it calls cb which we attched with then function of promise . callback function is called only
+     one time this assure js from us. then function will automatically gets called. 
+    when state becomes rejected 
+    
+    what is benefit of promise:-
+    first of all promise gives to solution for call back hell.
+    inversion of controll
+    promise gives the trust to us that when it is resolved then it will called then() method and when it is rejected
+    it will call catch() method.
+    
+    
+    
+    
+     call back hell (code statrts to execute horizontally insteadof vertically  )
+    
+    createOrder(cart , function(orderId)
+    {
+        ProceedPayment(orderId ,function(paymentId)
+        {
+
+        showOrderSummary(paymentId , function(paymentId)
+        {
+
+            updateWalletbal(paymentId)
+        })
+    })
+    })
+
+ solving call back using promise chain
+
+    const promise =   createOrder(cart)
+
+    .then(function(orderId){
+
+       return ProceedPayment(orderId)
+    })
+    .then(function(paymentId) {
+
+       return  showOrderSummary(paymentId )
+        });
+    
+    
+    
+    
+    
+     */
+
+    const github_api = "https://api.github.com/users/ansardanish";
+    const promise = fetch(github_api);
+
+    const promise2 = createOrder(cart)
+
+        .then(function (orderId) {
+
+            return ProceedPayment(orderId)
+        })
+        .then(function (paymentId) {
+
+            return showOrderSummary(paymentId)
+        })
+        .then(function (paymentInfor) {
+
+            return updateWallet(paymentId)
+        });
+
+
+
+
+
+
+</script>

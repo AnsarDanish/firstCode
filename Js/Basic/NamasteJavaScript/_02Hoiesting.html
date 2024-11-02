@@ -1,0 +1,36 @@
+<!-- /*
+  not defined  vs undefined
+  if varible is not decalred
+  if varible is declared but after using it. we are using first like we printing value of x the we are doing var x=5;
+  
+*/
+ -->
+<script>
+
+getName();        //  op   Danish Ansari
+console.log(x);   //  undefine
+console.log(y);  // y is not define
+console.log(getName); //  whole function will be printed in string formet
+getName2();  //   getName2 is not a function
+
+function getName(){  // while memory creation getName is considered as function and whole body is assign
+  console.log("Danish ANsari");
+}
+
+
+var x= 15;
+var getName2 =()=>{ // when we define arrow function then getName2 is considred as varible and its define undfine if we print it
+                    // before decleration it will give error that getName2 is not a function
+
+    console.log("hazim ANsari");
+}
+
+var getName3=function(){  // getName3 is also cosidered as varible
+  
+
+}
+
+
+
+</script>
+

@@ -1,0 +1,48 @@
+<script>
+    /* whta is closur:-
+      it is nothing but a scope. assume there is two function . first function is name outer and inside outer there is 
+      another function which name is inner . when we try to access in inner function a varible of outer function js
+      creates clouser and put all the varible which are being accessed in inner function . it is used when we return inner function
+      from outer function ,then it is not only return inner function but also returns same closure which was created.
+    */
+   
+    let gb="asad";
+    function sub(){
+ //       debugger
+        const x=15;
+        const y=18;
+        console.log(y-x);
+
+        function child(){
+            const child1="Choto";
+            console.log("child" ,child1);
+            console.log(y);
+            console.log(gb);
+            
+            function grandChild(){
+                const grandChaildName="Gtt";
+                console.log("child1" ,child1);
+                console.log("y" ,y);
+                console.log("gb" ,gb);
+
+                if(5>4){
+                    debugger
+                    let grandChaildName2="grandChaildName";
+                    console.log("grandChaildName" ,grandChaildName);
+                    grandChaildName3="grandChaildName3" // this will be craeted on window object. can be access out side the function
+                    //as well.
+                    
+                }
+                 
+            }
+
+            grandChild();
+            
+            
+        }
+        child();
+        
+    }
+
+    sub();
+</script>

@@ -1,0 +1,21 @@
+<script>
+    const userName={
+        fn:'Danish',sn:'Ansari',age:50,
+        add:{
+            city:'bhiwandi'
+        },
+        getFull:()=>{
+            return "Danish Ansari"
+        }
+    }
+
+    console.log(userName.add && userName.add.city);
+
+    console.log(userName.add?.city);
+    console.log(userName.add?.['city']);
+
+    console.log(userName.getFull?.());
+     userName.isFunction?.()
+     /* add?.city   add?.[5]   add.callFunction() */
+
+</script>

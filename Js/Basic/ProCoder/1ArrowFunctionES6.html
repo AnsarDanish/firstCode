@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+  /* both are function defination . function can be define in two ways 1st is using function Declaration and function expression */
+    /* Function Experesion :- when function without name (Anonymouse function )is stored in any variable that is called expression
+
+    Function DEcleration:- when we use function keyword and then give the function name 
+    
+    */
+   function square(num){// parameter // function decleration
+
+    return num*num;
+   }
+   // decleration
+   const sq=function (num){
+    // both functon exp and dec are same but dec behave diffrent is hoiesting , there is no difference other than it
+    return num*num
+   }
+
+   // Arrow Function Expression
+
+   const sqt=(num)=>{
+    return num*num;
+   }
+   // if you put{} then explicity return is mandatiry ow it returns udf
+   const sqtt=(num)=> num*num; // return and block both need to return
+   // parameter round bracket is optional
+   const random=()=>(// for grouping perpose we use round bracket
+ //   Math.floor(Math.random(Math.random()*10)+1)
+   // Map.apply();
+    console.log("danish")
+   )
+   
+   sqt(15);
+   /* in var case function is not hoeisted . if you try to call it gives error that sayHi is not function . it is 
+   treated as varible  */
+</script>
+</html>

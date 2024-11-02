@@ -1,0 +1,35 @@
+<script>
+    /*Promise.all([p1,p2,p3])  1s  ,2s  ,3s
+    suceess : whole time will be taken 3s and return [v1,v2,v3]
+    reject :  if one api gets fail it gives error of that api . it fails fast . not wait other promise to resolve or reject
+
+    promise.allselected ([p1,p2,p3])  1s,2s,3s
+    success :- whole time will be taken 3s and return [v1,v2,v3]
+    reject : it wait other promise to resolve or reject  [v1, error,v3]
+
+    promise.race()
+    success:- not wait other promise to resolve or reject. whichever first api get resolve it shows its result or if an erro same
+              same things happen with an error as well.
+
+
+              
+    Promise.all([p1,p2,p3])  1s  ,2s  ,3s
+    suceess : whole time will be taken 3s and return [v1,v2,v3]
+    reject :  if one api gets fail it gives error of that api . it fails fast . not wait other promise to resolve or reject
+
+    promise.allsettled ([p1,p2,p3])  1s,2s,3s
+    success :- whole time will be taken 3s and return [v1,v2,v3]
+    reject : it wait other promise to resolve or reject  [v1, error,v3]
+
+    promise.race([p1,p2,p3])
+    success:- not wait other promise to resolve or reject. whichever first api get resolve it shows its result or if an erro same
+              same things happen with an error as well.
+
+
+    promise .any([p1,p2,p3])
+    success :- wait for the any of primise untill it see first resolve.seeking for first success.when it gets first success it quickly return
+              value 
+    reject :- if all of tthm promise fails it gives aggregate error [err1 ,err2 ,err3]
+              
+     */
+</script>

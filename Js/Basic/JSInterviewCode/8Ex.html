@@ -1,0 +1,206 @@
+<script>
+    /* missing element from 1 to 10 */
+    let arr=[1,2,4,7,8,9,10];
+    // let sum=arr.reduce((prev,curr ,crrIndex,arr )=>{
+    //     return prev+curr;
+    // },0);
+    // console.log("missing Ele",(55-sum));
+    let arr2=[1,2,3,4,5,6,7,8,9,10]
+    let arr4=[1,2,3,4,5]
+    
+   let arr3= arr2.filter((num,indx)=>{
+       return !arr.some((num2)=>{
+      //  console.log( "log",num,num2, num==num2);
+        return num===num2
+       })
+    });
+    console.log("arr3" ,arr3);
+
+    /* how to find even and odd number in an array */
+  let evenArr=  arr2.filter((num , ind , arr)=>num%2==0)
+  let oddArr=  arr2.filter((num , ind , arr)=>num%2!=0);
+  console.log("evenArr" ,evenArr);
+  console.log("oddArr" ,oddArr);
+
+  /* factorial */
+  let ft=arr4.reduce((prev,curr,ind,arr)=>{
+      return prev*curr;
+  },1);
+  console.log("ft" ,ft);
+
+  function isPrime(num){
+    if(num==1)
+     return false;
+    if(num==2)
+    return true;
+
+    for(let j=2;j<=num/2;j++){
+        if(num%j==0)
+        return false;
+    }
+    return true;
+  }
+
+  let primArr=arr2.filter((num,ind,arr)=>isPrime(num));
+  console.log("primArr" ,primArr);
+  let vowel=['a','e' ,'i' ,'o','u']
+  function isVowel(ch){
+   return vowel.some((ct)=>ch.toLowerCase?.()===ct)
+  }
+
+  let str="Danish Ansari";
+  let strArr=str.split("");
+  let VwArr= strArr.filter((ch)=>isVowel(ch));
+  console.log("VwArr" ,VwArr);
+  console.log("VwArr2" ,VwArr.join(""));
+
+  console.log("rev" ,strArr.reverse().join(""));
+
+  let pal1="88988"
+  let pal1Arr=pal1.split("");
+
+  let lastIndex=pal1Arr.length-1;
+ let isPal= pal1Arr.every((num , ind , arr)=>{
+    if(num!=arr[lastIndex]){
+        lastIndex=lastIndex-1;
+        return false;
+    }else{
+        lastIndex=lastIndex-1;
+        return true;
+    }
+  });
+
+  console.log("isPal" ,isPal);
+
+  /* swaping two var */
+  let val1=5;
+  let val2=4;
+  //val2=5 va1=4 
+  val2=val1+val2;
+  val1=val2-val1;
+  val2=val2-val1;
+
+  console.log("val1" ,val1);
+  console.log("val2" ,val2);
+
+  let finalArr=[...arr ,...arr2]
+  let sortedArr=finalArr.sort((a,b)=>  a-b);
+
+  console.log("sortedArr" ,sortedArr);
+  console.log("sortedArr" ,JSON.stringify(sortedArr));
+
+  let eq1=[5,6,7,8,3]
+  let eq2=[7,5,6,8,3]
+
+  let stEq1=eq1.sort((a,b)=> a-b)
+  let stEq2=eq2.sort((a,b)=> a-b)
+  console.log("isEq" , JSON.stringify(stEq1)==JSON.stringify(stEq2));
+
+  console.log("union arr" ,[ ...new Set(finalArr)]);
+
+  console.log("intersection" ,[... new Set(arr.filter((num)=> arr2.includes(num)) )]  ); 
+
+  /* 0 1 1 2  3 5 8 */
+
+  let a=-1;
+  let b=1;
+  let c=a+b; // 
+  console.log(c); // 0 1
+  a=b; // 0
+  b=c; // 1
+
+
+  for(let k=1;k<=5;k++){
+
+    let str="";
+    for(let j=1;j<=k;j++){
+       str=str+"* ";
+    }
+    console.log(str);
+    
+  }
+
+  for(let k=1;k<=5;k++){
+
+    let str="";
+    for(let j=1;j<=(5-k);j++){
+       str=str+" ";
+    }
+    for(let j=1;j<=k;j++){
+       str=str+"* ";
+    }
+    console.log(str);
+    
+  }
+  for(let k=1;k<5;k++){
+
+    let str="";
+    for(let j=1;j<=(k);j++){
+       str=str+" ";
+    }
+    for(let j=1;j<=(5-k);j++){
+       str=str+"* ";
+    }
+    console.log(str);
+    
+  }
+
+
+  let str5="sfhdfnmfd fdvnmfdnmnmf";
+
+  let ct=new Map()
+  ct.set("Danish",1)
+  let mp=new Map(ct)
+  str5.split('').forEach((ch)=>{
+    if(mp.has(ch)){
+     mp.set(ch,mp.get(ch)+1)
+    }else{
+        mp.set(ch,1)
+    }
+  });
+
+  console.log("mp" ,mp);
+
+
+  /* armstrong number */
+  let num10=371;
+
+  let temp=num10;
+let cbSum=0;
+  while(temp>0){
+    let lstD= temp%10;
+    console.log("la" ,lstD);
+    
+    cbSum=cbSum+ lstD*lstD*lstD;
+    temp=Math.floor(temp/10); // 37
+    console.log("temp" ,temp);
+    
+  }
+
+  console.log("cbsum" ,cbSum);
+  console.log("isNan" ,isNaN("55"));
+  
+  
+
+
+  
+
+
+  
+
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+</script>

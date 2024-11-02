@@ -1,0 +1,37 @@
+<script>
+    let att=[10,77,15,18,19,18,15,77,55,66];
+    let ac=0;
+    let newArr=att.filter(e=>{
+        if(e===Math.max(...att) && ac===0){
+            console.log("grtt");
+            ac=1;
+            return false;
+        }else{
+         
+           return true;
+        }
+    });
+    let abb=newArr.sort((e1,e2)=>e2-e1)
+    console.log("abb" ,abb);
+
+    /* jus for practice witout using any inbuit function */
+    let maxEle=-1;
+    let second=-2;
+    console.log("lowest number" ,maxEle);
+    
+    for(let i=0;i<att.length;i++){
+       if(att[i]>=maxEle){
+         if(att[i]!=maxEle)
+            second=maxEle;
+         maxEle=att[i];
+       }else if(second <att[i]){
+         second=att[i]
+       }
+       
+    }
+
+
+    console.log("largest and second" ,maxEle , second);
+    
+    
+</script>

@@ -1,0 +1,41 @@
+<script>
+
+ class CreateUser {
+
+#age  // private field
+static hi="hello world" // static field
+
+static{
+    console.log(" it will exexuted when the class is loaded first time");
+    this.staticPropByDefault=0;
+    
+}
+constructor(firstName,lastName,age) {
+    this.firstName=firstName;
+     this.lastName=lastName;
+     this.#age=age;
+    
+}
+getBirthYear(){
+    this.#privateMethod();
+    return new Date().getFullYear() - this.#age;
+}
+
+#privateMethod(){
+    console.log("priavte method");
+    
+}
+
+static staticMethod(){
+    console.log("static method");
+    
+}
+}
+
+const user5=new CreateUser("Hazim" ,"Ansari" ,25);
+console.log(user5)
+CreateUser.dummy="dmmy to check"
+console.dir(CreateUser)
+
+console.log(CreateUser.hi)
+</script>

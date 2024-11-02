@@ -1,0 +1,43 @@
+<script>
+    /* Rest params :-it takes argument and put it in array */
+    /* Spread operator :- it just spred the iterator values by seprated by comma */
+    const nums1=[1,2,3,4];
+    function add(...nums){ //rest params  add(nums=[1,2,3,4])
+       let sum= nums.reduce((prev,curr,ind)=>prev+curr,0);
+       console.log('sum' ,sum);
+       console.log(arguments)
+    }
+
+    //spread operator  add(1,2,3,4)
+    console.log(nums1);
+    add(...nums1);
+
+    /* Array  Destructuring  */
+const colors=['red' ,'green' ,'yellow' ,'pink' ,'black']
+const [cl1,cl2,,,cl5]=colors
+/* array is behind object index of array are key and value are values */
+const {3:cla1}=colors;
+
+/* Object Destructuring */
+    const user ={
+        name:'danish',
+        age:50,
+        address:{
+            city:'bhiwandi',
+
+        }
+    }
+
+    const {name ,age:userAge}=user
+    console.log(`user age` ,userAge);
+
+    const{address:{city}}=user
+    console.log(`city` ,city);
+
+    function intro(userObje){
+      console.log(userObje);
+    }
+    intro(user);
+
+
+</script>

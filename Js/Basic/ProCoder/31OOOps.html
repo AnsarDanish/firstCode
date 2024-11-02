@@ -1,0 +1,98 @@
+<script>
+    const user = {
+        firstName: 'Danish',
+        lastName: 'Ansari',
+        age: 25
+    }
+
+    function getAgeYear(age) {
+        return new Date().getFullYear() - age;
+    }
+
+    getAgeYear(user.age);
+
+    /* we are trying to encapsulate the property and behavour below */
+    const user2 = {
+        firstName: 'Danish',
+        lastName: 'Ansari',
+        age: 25,
+        getAgeYear() {
+            return new Date().getFullYear() - user2.age;
+        }
+    }
+    user2.getAgeYear();
+
+    /* abstraction:- highlighting the set of services and hiding internal implementation is called abstraction */
+
+    //  factory function --> createUser 
+
+    function getAgeYear2() {
+        // can be example of polymorphism , beacz value is age depends on on which object is called (overriding)
+        return new Date().getFullYear() - this.age;
+    }
+
+
+    function createUser(firstName, lastName, age) {
+        const user = {
+            firstName,
+            lastName,
+            age,
+            getAgeYear() {
+                return new Date().getFullYear() - user.age;  // problem is that for every object getAgeYear new function is being created
+            },
+            getAgeYear2,
+            getAgeYear3:createUser.commonMethod.getAgeYear3   
+        }
+        return user;
+
+    }
+
+
+    createUser.commonMethod = {
+        getAgeYear3() {
+
+            return new Date().getFullYear() - this.age;
+        }
+    }
+
+    const user3 = createUser("hazim", "ansari", 28);
+    const user4 = createUser("hazim2", "ansari2", 28);
+    console.log(user3);
+    console.log(user4);
+    console.log(user3.getAgeYear2());
+    console.log(user3.getAgeYear2 === user4.getAgeYear2); // true
+    createUser.hello = " hello Danish";
+    console.dir(createUser);
+
+
+    function CreateUser2(firstName, lastName, age) {
+         this.firstName=firstName;
+         this.lastName=lastName;
+         this.age=age;
+    }
+CreateUser2.prototype.getAgeYear4=function getAgeYear() {
+        return new Date().getFullYear() - this.age;
+    }
+
+console.dir(CreateUser2)
+
+//   when function is called with new keyword  that function is called constructor function ,and convention is
+// constructor function always statrs with caps
+   let user8=  new CreateUser2("Danish","Ans",25);;
+   // when ever we write new keyword before function then js create an object and return that object .
+   // and it does one more thing that whatever we have in prototype property of createUser2 , it put
+   // it put all prperty in __proto__ of  object  which it has created
+
+   // createUser3.prototype get inherited in user8.__proto__
+
+   // we are setting every function CreateUser2.prototype.getAgeYear4 . so our code becomes big
+   // so this problem is solved by classes , classes are synthetical suger of constrictor function
+   // behind the the scene it works same as it constructor function like it creates object
+   // and put all methods in __proto__ property.
+   
+
+   console.log(user8.getAgeYear4());
+   
+
+
+</script>

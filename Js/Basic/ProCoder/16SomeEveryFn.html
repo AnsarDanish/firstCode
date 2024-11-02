@@ -1,0 +1,19 @@
+<script>
+    const evenNumber=[0,2,4,6,8,13];
+
+    /* if returns true when call back function returns true atleast one time truthy value */
+   let res= evenNumber.some((num, index , arr)=>{
+       return num%2===1  // to find in an given array odd is present or not
+    })
+    console.log("res 2" ,res);
+
+
+    /* every function is just opposite of some */
+    /* every rturn true only when each iteration call back function retuns truty value */
+
+    let ress=evenNumber.every((e)=>e%2==0)
+
+    console.log(ress);
+    
+    
+</script>

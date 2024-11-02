@@ -1,0 +1,38 @@
+<script>
+    const radius=[1,5,6,7]
+
+    const diamter=(num)=>{
+        return num*2;
+    }
+    const area=(num)=>{
+        return 3.14*num*num;
+    }
+
+    const circumFerence=(num)=>{
+      return 2*3.14*num
+    }
+
+    const calculator=(cb,radius)=>  radius.map?.((num)=>cb?.(num))
+
+    console.log("diameter" ,calculator(diamter , radius));
+    console.log("area" ,calculator(area , radius));
+    console.log("circumFerence" ,calculator(circumFerence , radius));
+
+    Array.prototype.calculate=function (cb){
+       const output=[]
+       for(let i=0;i<this.length;i++){
+          output[i]=cb?.(this[i])
+       }
+       return output
+    }
+    console.log("*****************************************");
+    
+
+    console.log("diameter" ,radius.calculate(diamter));
+    console.log("area" ,radius.calculate(area));
+    console.log("circumFerence" ,radius.calculate(circumFerence));
+    
+    
+      
+    
+</script>
