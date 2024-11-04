@@ -14,6 +14,7 @@ const server=http.createServer((req ,res)=>{
 
         if(!err){
        //  console.log(data);
+           console.log(req.url);
            res.writeHead(200,{'Content-Type':'text/html'}) // what content you are passing in response
             res.write(data)
             res.end()
