@@ -33,8 +33,12 @@ Overloading is used when we require multiple behaviour.
 Overriding :- when supper class and sub class have methods with same name and same number of argument so supper
 class method is called in subclass it has been overridden by subclass .
 
-
-
+exception with overriding :- 
+Unchecked exceptions: No strict rules; the subclass can throw any runtime exception.
+Checked exceptions:
+The subclass can throw the same checked exception as the superclass.
+The subclass can throw a subclass of the checked exception declared in the superclass.
+The subclass cannot throw a different checked exception that is not compatible with the superclass’s declared exception
 
 Design pattern:-
 Singleton Design pattern:- it is creational design pattern that restrict the instantiation of a class to a single object.
