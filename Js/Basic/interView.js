@@ -12,8 +12,10 @@ With the help of function in javascript we can resuse code again and again when 
 *********** ES6
 default parameter
 Rest parameter
-spread operation
+
+spread operator
 destructing 
+
 arrow function
 optional chaninig
 
